@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+    <title>Configuration - Insights Results Smart Proxy</title>
+
+    
+  
+
+  <link rel="shortcut icon" href="/insights-results-smart-proxy/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/insights-results-smart-proxy/assets/css/just-the-docs-default.css">
+
+  
+
+  
+  <script type="text/javascript" src="/insights-results-smart-proxy/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Configuration | Insights Results Smart Proxy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Configuration" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Smart Proxy service for Openshift insights results" />
+<meta property="og:description" content="Smart Proxy service for Openshift insights results" />
+<link rel="canonical" href="https://redhatinsights.github.io/insights-results-smart-proxy/configuration.html" />
+<meta property="og:url" content="https://redhatinsights.github.io/insights-results-smart-proxy/configuration.html" />
+<meta property="og:site_name" content="Insights Results Smart Proxy" />
+<script type="application/ld+json">
+{"description":"Smart Proxy service for Openshift insights results","url":"https://redhatinsights.github.io/insights-results-smart-proxy/configuration.html","@type":"WebPage","headline":"Configuration","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-link" viewBox="0 0 24 24">
+      <title>Link</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+      </svg>
+    </symbol>
+    <symbol id="svg-search" viewBox="0 0 24 24">
+      <title>Search</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+      <title>Menu</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+      <title>Expand</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </symbol>
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+      <title>Document</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+    </symbol>
+  </svg>
+
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="https://redhatinsights.github.io/insights-results-smart-proxy/" class="site-title lh-tight">
+  Insights Results Smart Proxy
+
+</a>
+      <a href="#" id="menu-button" class="site-button">
+        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      </a>
+    </div>
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      
+        <ul class="nav-list"><li class="nav-list-item"><a href="https://redhatinsights.github.io/insights-results-smart-proxy/architecture.html" class="nav-list-link">Architecture</a></li><li class="nav-list-item active"><a href="https://redhatinsights.github.io/insights-results-smart-proxy/configuration.html" class="nav-list-link active">Configuration</a></li><li class="nav-list-item"><a href="https://redhatinsights.github.io/insights-results-smart-proxy/rest_api.html" class="nav-list-link">REST API</a></li><li class="nav-list-item"><a href="https://redhatinsights.github.io/insights-results-smart-proxy/authentication.html" class="nav-list-link">Authentication</a></li><li class="nav-list-item"><a href="https://redhatinsights.github.io/insights-results-smart-proxy/prometheus.html" class="nav-list-link">Prometheus API</a></li><li class="nav-list-item"><a href="https://redhatinsights.github.io/insights-results-smart-proxy/testing.html" class="nav-list-link">Testing</a></li><li class="nav-list-item"><a href="https://redhatinsights.github.io/insights-results-smart-proxy/ci.html" class="nav-list-link">Continuous integration</a></li><li class="nav-list-item"><a href="https://redhatinsights.github.io/insights-results-smart-proxy/external_pipeline_arch.html" class="nav-list-link">External Pipeline architecture</a></li><li class="nav-list-item"><a href="https://redhatinsights.github.io/insights-results-smart-proxy/sources.html" class="nav-list-link">Source files documentation</a></li><li class="nav-list-item"><a href="https://redhatinsights.github.io/insights-results-smart-proxy/references.html" class="nav-list-link">References</a></li><li class="nav-list-item"><a href="https://redhatinsights.github.io/insights-results-smart-proxy/acm_interface_req_rep.html" class="nav-list-link">Interface with ACM</a></li><li class="nav-list-item"><a href="https://redhatinsights.github.io/insights-results-smart-proxy/" class="nav-list-link">Description</a></li></ul>
+
+      
+    </nav>
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  </div>
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+      
+      
+      
+        <nav aria-label="Auxiliary" class="aux-nav">
+          <ul class="aux-nav-list">
+            
+              <li class="aux-nav-list-item">
+                <a href="https://github.com/RedHatInsights/insights-results-smart-proxy" class="site-button"
+                  
+                >
+                  Github repository
+                </a>
+              </li>
+            
+          </ul>
+        </nav>
+      
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+      
+      <div id="main-content" class="main-content" role="main">
+        
+          <h1 class="no_toc" id="configuration">
+        
+        
+          <a href="#configuration" class="anchor-heading" aria-labelledby="configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Configuration
+        
+        
+      </h1>
+    
+      <h2 class="no_toc" id="table-of-contents">
+        
+        
+          <a href="#table-of-contents" class="anchor-heading" aria-labelledby="table-of-contents"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Table of contents
+        
+        
+      </h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#server-configuration" id="markdown-toc-server-configuration">Server configuration</a></li>
+  <li><a href="#services-configuration" id="markdown-toc-services-configuration">Services configuration</a></li>
+  <li><a href="#setup-configuration" id="markdown-toc-setup-configuration">Setup configuration</a></li>
+  <li><a href="#metrics-configuration" id="markdown-toc-metrics-configuration">Metrics configuration</a></li>
+  <li><a href="#usage-of-environment-variables" id="markdown-toc-usage-of-environment-variables">Usage of environment variables</a></li>
+</ol>
+
+<p>Configuration is done by <code class="language-plaintext highlighter-rouge">toml</code> config, taking the <code class="language-plaintext highlighter-rouge">config.toml</code> in the working
+directory if no configuration is provided. This can be overriden by
+<code class="language-plaintext highlighter-rouge">INSIGHTS_RESULTS_SMART_PROXY_CONFIG_FILE</code> environment variable.</p>
+      <h2 id="server-configuration">
+        
+        
+          <a href="#server-configuration" class="anchor-heading" aria-labelledby="server-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Server configuration
+        
+        
+      </h2>
+    
+
+<p>Server configuration is in section <code class="language-plaintext highlighter-rouge">[server]</code> in config file.</p>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[server]</span>
+<span class="py">address</span> <span class="p">=</span> <span class="s">":8080"</span>
+<span class="py">api_prefix</span> <span class="p">=</span> <span class="s">"/api/v1/"</span>
+<span class="py">api_spec_file</span> <span class="p">=</span> <span class="s">"openapi.json"</span>
+<span class="py">debug</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="py">auth</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="py">auth_type</span> <span class="p">=</span> <span class="s">"xrh"</span>
+<span class="py">use_https</span> <span class="p">=</span> <span class="kc">false</span>
+<span class="py">enable_cors</span> <span class="p">=</span> <span class="kc">false</span>
+<span class="py">enable_internal_rules_organizations</span> <span class="p">=</span> <span class="kc">false</span>
+<span class="py">internal_rules_organizations</span> <span class="p">=</span> <span class="p">[]</span>
+<span class="py">log_auth_token</span> <span class="p">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">address</code> is host and port which server should listen to</li>
+  <li><code class="language-plaintext highlighter-rouge">api_prefix</code> is prefix for RestAPI path</li>
+  <li><code class="language-plaintext highlighter-rouge">api_spec_file</code> is the location of a required OpenAPI specifications file</li>
+  <li><code class="language-plaintext highlighter-rouge">debug</code> is developer mode that enables some special API endpoints not used on production. In
+production, <code class="language-plaintext highlighter-rouge">false</code> is used every time.</li>
+  <li><code class="language-plaintext highlighter-rouge">auth</code> turns on or turns authentication. Please note that this option can be set to <code class="language-plaintext highlighter-rouge">false</code> only
+in devel environment. In production, <code class="language-plaintext highlighter-rouge">true</code> is used every time.</li>
+  <li><code class="language-plaintext highlighter-rouge">auth_type</code> set type of auth, it means which header to use for auth <code class="language-plaintext highlighter-rouge">x-rh-identity</code> or
+<code class="language-plaintext highlighter-rouge">Authorization</code>. Can be used only with <code class="language-plaintext highlighter-rouge">auth = true</code>. Possible options: <code class="language-plaintext highlighter-rouge">jwt</code>, <code class="language-plaintext highlighter-rouge">xrh</code></li>
+  <li><code class="language-plaintext highlighter-rouge">use_https</code> enable or disable the usage of SSL transport for the HTTP server</li>
+  <li><code class="language-plaintext highlighter-rouge">enable_cors</code> enable or disable the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS
+headers</a></li>
+  <li><code class="language-plaintext highlighter-rouge">enable_internal_rules_organizations</code> allows enabling the access to the static
+content for internal rules for configured organizations (by <code class="language-plaintext highlighter-rouge">OrgID</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">internal_rules_organizations</code> defines the list of organizations who can
+access to the internal rules content</li>
+  <li><code class="language-plaintext highlighter-rouge">log_auth_token</code> enable or disable logging about the auth token used for
+identify the user performing requests to this service</li>
+</ul>
+
+<p>Please note that if <code class="language-plaintext highlighter-rouge">auth</code> configuration option is turned off, not all REST API endpoints will be
+usable. Whole REST API schema is satisfied only for <code class="language-plaintext highlighter-rouge">auth = true</code>.</p>
+      <h2 id="services-configuration">
+        
+        
+          <a href="#services-configuration" class="anchor-heading" aria-labelledby="services-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Services configuration
+        
+        
+      </h2>
+    
+
+<p>Services configuration is in section <code class="language-plaintext highlighter-rouge">[services]</code> in the configuration file.</p>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[services]</span>
+<span class="py">aggregator</span> <span class="p">=</span> <span class="s">"http://localhost:8080/api/v1/"</span>
+<span class="py">content</span> <span class="p">=</span> <span class="s">"http://localhost:8082/api/v1/"</span>
+<span class="py">groups_poll_time</span> <span class="p">=</span> <span class="s">"60s"</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">aggregator</code> is the base endpoint to the Insights Results Aggregator service
+to be used</li>
+  <li><code class="language-plaintext highlighter-rouge">content</code> is the base endpoint to the Insights Content Service to be used</li>
+  <li><code class="language-plaintext highlighter-rouge">groups_poll_time</code> is the time between polls to the content service to
+retrieve updated static content, like groups or rule contents</li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">groups_poll_time</code> must be configured as an string that can be parsed by the
+function <a href="https://golang.org/pkg/time/#ParseDuration"><code class="language-plaintext highlighter-rouge">time.ParseDuration</code></a> from
+Golang standard library.</p>
+      <h2 id="setup-configuration">
+        
+        
+          <a href="#setup-configuration" class="anchor-heading" aria-labelledby="setup-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Setup configuration
+        
+        
+      </h2>
+    
+
+<p>TBD</p>
+      <h2 id="metrics-configuration">
+        
+        
+          <a href="#metrics-configuration" class="anchor-heading" aria-labelledby="metrics-configuration"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Metrics configuration
+        
+        
+      </h2>
+    
+
+<p>Metrics configuration is in section <code class="language-plaintext highlighter-rouge">[metrics]</code> in config file</p>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[metrics]</span>
+<span class="py">namespace</span> <span class="p">=</span> <span class="s">"mynamespace"</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">namespace</code> if defined, it is used as <code class="language-plaintext highlighter-rouge">Namespace</code> argument when creating all
+the Prometheus metrics exposed by this service.</li>
+</ul>
+      <h2 id="usage-of-environment-variables">
+        
+        
+          <a href="#usage-of-environment-variables" class="anchor-heading" aria-labelledby="usage-of-environment-variables"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Usage of environment variables
+        
+        
+      </h2>
+    
+
+<p>In order to avoid using a configuration file or to override some of the
+configured values in it, the environment variables can be used.</p>
+
+<p>Every configuration explained before in this document can be overriden by its
+corresponding environment variable.</p>
+
+<p>For example, if you have a configuration that includes the following:</p>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[server]</span>
+<span class="py">address</span> <span class="p">=</span> <span class="s">":8080"</span>
+<span class="py">auth</span> <span class="p">=</span> <span class="kc">false</span>
+</code></pre></div></div>
+
+<p>and you want to override the address for the HTTP server you can export
+<code class="language-plaintext highlighter-rouge">INSIGHTS_RESULTS_SMART_PROXY__SERVER__ADDRESS</code> variable, and its value will
+override the <code class="language-plaintext highlighter-rouge">toml</code> file one.</p>
+
+<p>For example:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">INSIGHTS_RESULTS_SMART_PROXY__SERVER__ADDRESS</span><span class="o">=</span><span class="s2">":443"</span>
+<span class="nv">INSIGHTS_RESULTS_SMART_PROXY__SERVER__AUTH</span><span class="o">=</span><span class="s2">"true"</span>
+</code></pre></div></div>
+
+<p>will result on the server listens on port 443 and use TLS transport.</p>
+
+<p>All the environment variables must have the <code class="language-plaintext highlighter-rouge">INSIGHTS_RESULTS_SMART_PROXY</code>
+preffix, followed by the section name and the configuration paramater, both in
+upper case. The characters <code class="language-plaintext highlighter-rouge">__</code> should be used as separater between the preffix,
+the section name and the configuration parameter in each variable name.</p>
+
+        
+
+        
+
+        
+        
+          <hr>
+          <footer>
+            
+
+            <p class="text-small text-grey-dk-100 mb-0">Copyright &copy; 2020 Red Hat, Inc.</a></p>
+
+            
+          </footer>
+        
+
+      </div>
+    </div>
+
+    
+  </div>
+</body>
+</html>
+

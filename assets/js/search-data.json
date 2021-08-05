@@ -1,0 +1,194 @@
+{"0": {
+    "doc": "Interface with ACM",
+    "title": "Interface with ACM",
+    "content": " ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/acm_interface_req_rep.html",
+    "relUrl": "/acm_interface_req_rep.html"
+  },"1": {
+    "doc": "Interface with ACM",
+    "title": "Step #1: request from ACM to Smart Proxy via 3Scale",
+    "content": ". ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/acm_interface_req_rep.html#step-1-request-from-acm-to-smart-proxy-via-3scale",
+    "relUrl": "/acm_interface_req_rep.html#step-1-request-from-acm-to-smart-proxy-via-3scale"
+  },"2": {
+    "doc": "Interface with ACM",
+    "title": "Step #2: request handling by 3Scale",
+    "content": ". ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/acm_interface_req_rep.html#step-2-request-handling-by-3scale",
+    "relUrl": "/acm_interface_req_rep.html#step-2-request-handling-by-3scale"
+  },"3": {
+    "doc": "Interface with ACM",
+    "title": "Step #3: processing request by Smart Proxy",
+    "content": ". ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/acm_interface_req_rep.html#step-3-processing-request-by-smart-proxy",
+    "relUrl": "/acm_interface_req_rep.html#step-3-processing-request-by-smart-proxy"
+  },"4": {
+    "doc": "Interface with ACM",
+    "title": "Step #4: processing request by Insights Results Aggregator",
+    "content": ". ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/acm_interface_req_rep.html#step-4-processing-request-by-insights-results-aggregator",
+    "relUrl": "/acm_interface_req_rep.html#step-4-processing-request-by-insights-results-aggregator"
+  },"5": {
+    "doc": "Interface with ACM",
+    "title": "Step #5: returning response to ACM",
+    "content": ". ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/acm_interface_req_rep.html#step-5-returning-response-to-acm",
+    "relUrl": "/acm_interface_req_rep.html#step-5-returning-response-to-acm"
+  },"6": {
+    "doc": "Architecture",
+    "title": "Architecture",
+    "content": "Smart proxy is the only external data pipeline service that is exposed directly to clients through cloud.redhat.com. This service is able to provide an interface to other services as well as composing responses aggregating data from different services. As an example of the first one, the groups endpoint will act as a proxy to the Content Service. But for example when asking for a cluster’s latest report, Smart Proxy retrieves the report from Aggregator service, and if some rules are hit, then it takes the content for those rules from the Content Service. Insights Results Smart Proxy has 3 main parts: . #. An Insights Results Aggregator client, that sends requests to the API in order to retrieve reports or other relevant info for the given cluster. #. An Insights Content Service client, that retrieve groups and static content for rules values from that service. #. A HTTP server that serve the current API, attending each request and using the previous clients in order to get the information from the relevant services. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/architecture.html",
+    "relUrl": "/architecture.html"
+  },"7": {
+    "doc": "Architecture",
+    "title": "Smart Proxy architecture",
+    "content": ". ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/architecture.html#smart-proxy-architecture",
+    "relUrl": "/architecture.html#smart-proxy-architecture"
+  },"8": {
+    "doc": "Authentication",
+    "title": "Authentication",
+    "content": "Authentication is working through x-rh-identity token which is provided by 3scale. x-rh-identity is base64 encoded JSON, that includes data about user and organization, like: . { \"identity\": { \"account_number\": \"0369233\", \"type\": \"User\", \"user\": { \"username\": \"jdoe\", \"email\": \"jdoe@acme.com\", \"first_name\": \"John\", \"last_name\": \"Doe\", \"is_active\": true, \"is_org_admin\": false, \"is_internal\": false, \"locale\": \"en_US\" }, \"internal\": { \"org_id\": \"3340851\", \"auth_type\": \"basic-auth\", \"auth_time\": 6300 } } } . If Smart Proxy didn’t get identity token or got invalid one, then it returns error with status code 403 - Forbidden. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/authentication.html",
+    "relUrl": "/authentication.html"
+  },"9": {
+    "doc": "Continuous integration",
+    "title": "Continuous integration",
+    "content": "Travis CI is configured for this repository. Several tests and checks are started for all pull requests: . | Unit tests that use the standard tool go test (see Testing section). | go fmt tool to check code formatting. That tool is run with -s flag to perform following transformations. | go vet to report likely mistakes in source code, for example suspicious constructs, such as Printf calls whose arguments do not align with the format string | golint as a linter for all Go sources stored in this repository | gocyclo to report all functions and methods with too high cyclomatic complexity. The cyclomatic complexity of a function is calculated according to the following rules: 1 is the base complexity of a function +1 for each if, for, case, &amp;&amp; or || Go Report Card warns on functions with cyclomatic complexity &gt; 9 | goconst to find repeated strings that could be replaced by a constant | gosec to inspect source code for security problems by scanning the Go AST | ineffassign to detect and print all ineffectual assignments in Go code | abcgo to measure ABC metrics for Go source code and check if the metrics does not exceed specified threshold | errcheck for checking for all unchecked errors in go programs | . Additionally shellcheck is run against all shell scripts found in this repository. For more info about this checker please visit its home page https://www.shellcheck.net/. All the above test and checks should be executed without a single error in order to merge new changes into master branch. History of checks performed by CI is available at RedHatInsights / insights-results-smart-proxy. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/ci.html",
+    "relUrl": "/ci.html"
+  },"10": {
+    "doc": "Configuration",
+    "title": "Configuration",
+    "content": " ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/configuration.html",
+    "relUrl": "/configuration.html"
+  },"11": {
+    "doc": "Configuration",
+    "title": "Table of contents",
+    "content": ". | Server configuration | Services configuration | Setup configuration | Metrics configuration | Usage of environment variables | . Configuration is done by toml config, taking the config.toml in the working directory if no configuration is provided. This can be overriden by INSIGHTS_RESULTS_SMART_PROXY_CONFIG_FILE environment variable. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/configuration.html#table-of-contents",
+    "relUrl": "/configuration.html#table-of-contents"
+  },"12": {
+    "doc": "Configuration",
+    "title": "Server configuration",
+    "content": "Server configuration is in section [server] in config file. [server] address = \":8080\" api_prefix = \"/api/v1/\" api_spec_file = \"openapi.json\" debug = true auth = true auth_type = \"xrh\" use_https = false enable_cors = false enable_internal_rules_organizations = false internal_rules_organizations = [] log_auth_token = true . | address is host and port which server should listen to | api_prefix is prefix for RestAPI path | api_spec_file is the location of a required OpenAPI specifications file | debug is developer mode that enables some special API endpoints not used on production. In production, false is used every time. | auth turns on or turns authentication. Please note that this option can be set to false only in devel environment. In production, true is used every time. | auth_type set type of auth, it means which header to use for auth x-rh-identity or Authorization. Can be used only with auth = true. Possible options: jwt, xrh | use_https enable or disable the usage of SSL transport for the HTTP server | enable_cors enable or disable the CORS headers | enable_internal_rules_organizations allows enabling the access to the static content for internal rules for configured organizations (by OrgID) | internal_rules_organizations defines the list of organizations who can access to the internal rules content | log_auth_token enable or disable logging about the auth token used for identify the user performing requests to this service | . Please note that if auth configuration option is turned off, not all REST API endpoints will be usable. Whole REST API schema is satisfied only for auth = true. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/configuration.html#server-configuration",
+    "relUrl": "/configuration.html#server-configuration"
+  },"13": {
+    "doc": "Configuration",
+    "title": "Services configuration",
+    "content": "Services configuration is in section [services] in the configuration file. [services] aggregator = \"http://localhost:8080/api/v1/\" content = \"http://localhost:8082/api/v1/\" groups_poll_time = \"60s\" . | aggregator is the base endpoint to the Insights Results Aggregator service to be used | content is the base endpoint to the Insights Content Service to be used | groups_poll_time is the time between polls to the content service to retrieve updated static content, like groups or rule contents | . The groups_poll_time must be configured as an string that can be parsed by the function time.ParseDuration from Golang standard library. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/configuration.html#services-configuration",
+    "relUrl": "/configuration.html#services-configuration"
+  },"14": {
+    "doc": "Configuration",
+    "title": "Setup configuration",
+    "content": "TBD . ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/configuration.html#setup-configuration",
+    "relUrl": "/configuration.html#setup-configuration"
+  },"15": {
+    "doc": "Configuration",
+    "title": "Metrics configuration",
+    "content": "Metrics configuration is in section [metrics] in config file . [metrics] namespace = \"mynamespace\" . | namespace if defined, it is used as Namespace argument when creating all the Prometheus metrics exposed by this service. | . ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/configuration.html#metrics-configuration",
+    "relUrl": "/configuration.html#metrics-configuration"
+  },"16": {
+    "doc": "Configuration",
+    "title": "Usage of environment variables",
+    "content": "In order to avoid using a configuration file or to override some of the configured values in it, the environment variables can be used. Every configuration explained before in this document can be overriden by its corresponding environment variable. For example, if you have a configuration that includes the following: . [server] address = \":8080\" auth = false . and you want to override the address for the HTTP server you can export INSIGHTS_RESULTS_SMART_PROXY__SERVER__ADDRESS variable, and its value will override the toml file one. For example: . INSIGHTS_RESULTS_SMART_PROXY__SERVER__ADDRESS=\":443\" INSIGHTS_RESULTS_SMART_PROXY__SERVER__AUTH=\"true\" . will result on the server listens on port 443 and use TLS transport. All the environment variables must have the INSIGHTS_RESULTS_SMART_PROXY preffix, followed by the section name and the configuration paramater, both in upper case. The characters __ should be used as separater between the preffix, the section name and the configuration parameter in each variable name. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/configuration.html#usage-of-environment-variables",
+    "relUrl": "/configuration.html#usage-of-environment-variables"
+  },"17": {
+    "doc": "External Pipeline architecture",
+    "title": "External Pipeline architecture",
+    "content": " ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/external_pipeline_arch.html",
+    "relUrl": "/external_pipeline_arch.html"
+  },"18": {
+    "doc": "External Pipeline architecture",
+    "title": "Sequence diagrams",
+    "content": ". | CCX Data pipeline sequence diagram | IO pulling data + exposing via CRD to OCP WebConsole | . ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/external_pipeline_arch.html#sequence-diagrams",
+    "relUrl": "/external_pipeline_arch.html#sequence-diagrams"
+  },"19": {
+    "doc": "External Pipeline architecture",
+    "title": "Interface between CCX data pipeline and OCP WebConsole",
+    "content": "Interface between CCX data pipeline and Insights Operator . | IO pulling data from CCX data pipeline | . Interface between Insights Operator and OCP WebConsole based on CRD . | IO exposing data via CRD | IO exposing data via CRD - including internal structure | . Interface between Insights Operator and OCP WebConsole based on Prometheus or Prometheus metrics . | IO exposing data via Prometheus metrics | IO exposing data via Prometheus metrics - including internal structure | IO exposing data via Prometheus API | . Animated versions of above diagrams . | Animation: IO pulling data from CCX data pipeline | Animation: IO exposing data via Prometheus metrics | . ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/external_pipeline_arch.html#interface-between-ccx-data-pipeline-and-ocp-webconsole",
+    "relUrl": "/external_pipeline_arch.html#interface-between-ccx-data-pipeline-and-ocp-webconsole"
+  },"20": {
+    "doc": "Description",
+    "title": "Description",
+    "content": "Insights Results Smart Proxy is a service that acts as a proxy between the different external data pipeline clients and the different services providing the required information. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/",
+    "relUrl": "/"
+  },"21": {
+    "doc": "Prometheus API",
+    "title": "Prometheus API",
+    "content": "It is possible to use /metrics REST API endpoint to read all metrics exposed to Prometheus or to any tool that is compatible with it. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/prometheus.html",
+    "relUrl": "/prometheus.html"
+  },"22": {
+    "doc": "Prometheus API",
+    "title": "API related metrics",
+    "content": "There are a set of metrics provieded by insights-operator-utils library, all of them related with the API usage. These are the API metrics exposed: . | api_endpoints_requests the total number of requests per endpoint | api_endpoints_response_time API endpoints response time | api_endpoints_status_codes a counter of the HTTP status code responses returned back by the service | . Additionally it is possible to consume all metrics provided by Go runtime. There metrics start with go_ and process_ prefixes. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/prometheus.html#api-related-metrics",
+    "relUrl": "/prometheus.html#api-related-metrics"
+  },"23": {
+    "doc": "Prometheus API",
+    "title": "Metrics namespace",
+    "content": "As explained in the configuration section of this documentation, a namespace can be provided in order to act as a prefix to the metric name. If no namespace is provided in the configuration, the metrics will be exposed as described in this documentation. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/prometheus.html#metrics-namespace",
+    "relUrl": "/prometheus.html#metrics-namespace"
+  },"24": {
+    "doc": "References",
+    "title": "References",
+    "content": ". | Insights Data Schemas | . ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/references.html",
+    "relUrl": "/references.html"
+  },"25": {
+    "doc": "REST API",
+    "title": "REST API",
+    "content": "Aggregator service provides information about its REST API schema via endpoint api/v1/openapi.json. OpenAPI 3.0 is used to describe the schema; it can be read by human and consumed by computers. For example, if aggregator is started locally, it is possible to read schema based on OpenAPI 3.0 specification by using the following command: . curl localhost:8080/api/v1/openapi.json . Please note that OpenAPI schema is accessible w/o the need to provide authorization tokens. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/rest_api.html",
+    "relUrl": "/rest_api.html"
+  },"26": {
+    "doc": "REST API",
+    "title": "Authorization tokens",
+    "content": "In order to access REST API authorization token needs to be provided for most REST API endpoints (OpenAPI schema is the exception). Proper REST API calls might look like: . curl -H 'Accept: application/json' -H \"Authorization: Bearer ${ACCESS_TOKEN}\" https://cloud.redhat.com/api/insights-results-aggregator/v1/org_overview | jq . curl -H 'Accept: application/json' -H \"Authorization: Bearer ${ACCESS_TOKEN}\" https://cloud.redhat.com/api/insights-results-aggregator/v1/organizations/13454947/clusters | jq . curl -H 'Accept: application/json' -H \"Authorization: Bearer ${ACCESS_TOKEN}\" https://cloud.redhat.com/api/insights-results-aggregator/v1/clusters/01234567-89ab-cdef-aaa7-dc6434af42d5/report | jq . Retrieving ACCESS_TOKEN . ACCESS_TOKEN can be retrieved from OFFLINE_TOKEN provided to user. Details are explained in internal documentation. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/rest_api.html#authorization-tokens",
+    "relUrl": "/rest_api.html#authorization-tokens"
+  },"27": {
+    "doc": "Source files documentation",
+    "title": "Source files documentation",
+    "content": ". | smart_proxy.go | smart_proxy_test.go | version.go | server/rules.go | server/router_utils_test.go | server/export_test.go | server/endpoints.go | server/handlers.go | server/server.go | server/auth.go | server/router_utils.go | server/server_test.go | server/endpoints_test.go | server/configuration.go | server/errors.go | conf/export_test.go | conf/configuration_test.go | conf/configuration.go | export_test.go | services/configuration.go | services/services.go | . ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/sources.html",
+    "relUrl": "/sources.html"
+  },"28": {
+    "doc": "Testing",
+    "title": "Testing",
+    "content": " ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/testing.html",
+    "relUrl": "/testing.html"
+  },"29": {
+    "doc": "Testing",
+    "title": "Table of contents",
+    "content": ". | Unit tests | Check coverage | . tl;dr: make before_commit will run most of the checks by magic, VERBOSE=true make before_commit will do the same but print more information about what it’s doing. The following tests can be run to test your code in insights-results-smart-proxy. Detailed information about each type of test is included in the corresponding subsection: . | Unit tests: checks behavior of all units in source code (methods, functions) | REST API Tests: test the real REST API of locally deployed application | Metrics tests: test whether Prometheus metrics are exposed as expected | . ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/testing.html#table-of-contents",
+    "relUrl": "/testing.html#table-of-contents"
+  },"30": {
+    "doc": "Testing",
+    "title": "Unit tests",
+    "content": "Set of unit tests checks all units of source code. Additionally the code coverage is computed and displayed. Code coverage is stored in a file coverage.out and can be checked by a script named check_coverage.sh. To run unit tests use the following command: . make test . ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/testing.html#unit-tests",
+    "relUrl": "/testing.html#unit-tests"
+  },"31": {
+    "doc": "Testing",
+    "title": "Check coverage",
+    "content": "If you want to check the percentage of code reached by the unit tests, you can use ./check_coverage.sh script after running the unit tests. It will check if the coverage of the code is bellow the threshold. ",
+    "url": "https://redhatinsights.github.io/insights-results-smart-proxy/testing.html#check-coverage",
+    "relUrl": "/testing.html#check-coverage"
+  }
+}
